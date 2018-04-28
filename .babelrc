@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    [
+      "transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ]
+  ],
+  "presets": [
+    [
+      "env",
+      {
+        "es2015": {
+          "modules": false
+        }
+      }
+    ],
+    "stage-0"
+  ]
+}
