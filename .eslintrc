@@ -5,7 +5,11 @@
     "document": true,
     "window": true
   },
-  "rules": {},
+  "rules": {
+    "no-unused-vars": ["error", {
+      "varsIgnorePattern": "h"
+    }]
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true

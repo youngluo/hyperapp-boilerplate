@@ -1,4 +1,3 @@
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -18,8 +17,7 @@ const config = {
     path: BUILD_PATH,
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: NODE_MODULES,
         use: 'babel-loader',
@@ -29,7 +27,7 @@ const config = {
         test: /\.less$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          `css-loader?minimize=${prod}`,
           'postcss-loader',
           'less-loader'
         ],
@@ -38,7 +36,7 @@ const config = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          `css-loader?minimize=${prod}`,
           'postcss-loader'
         ],
       },
@@ -74,8 +72,6 @@ if (!prod) {
     host: '0.0.0.0',
     port: 8080,
   };
-} else {
-  config.plugins.push(new OptimizeCssAssetsPlugin())
 }
 
 module.exports = config;
