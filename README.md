@@ -1,12 +1,16 @@
 # hyperapp-boilerplate
 
-> A boilerplate project that shows how to create a hyperapp application quickly.
+> A boilerplate project that shows how to create a hyperapp application quickly based on webpack4.
 
 ## Getting started
 
-    npm install
-    npm start
+``` bash
+npm install
+npm start
+```
 
 ## Build
 
-    npm run prod
+``` bash
+npm run prod
+``` 
